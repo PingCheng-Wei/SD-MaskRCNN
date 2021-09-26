@@ -1,14 +1,14 @@
 # Mask R-CNN for Object Detection and Segmentation using TensorFlow 2.0
 
-The [Mask-RCNN-TF2](#TODO!!!) project edits the original [Mask_RCNN](https://github.com/matterport/Mask_RCNN) project, which only supports TensorFlow 1.0, so that it works on TensorFlow 2.0. Based on this new project, the [Mask R-CNN](#TODO!!!) can be trained and tested (i.e make predictions) in TensorFlow 2.0. The Mask R-CNN model generates bounding boxes and segmentation masks for each instance of an object in the image. It's based on Feature Pyramid Network (FPN) and a ResNet101 backbone.
+This [Mask-RCNN-TF2](https://github.com/PingCheng-Wei/Mask-R-CNN) project edits the original [Mask_RCNN](https://github.com/matterport/Mask_RCNN) project, which only supports TensorFlow 1.0, so that it works on TensorFlow 2.0. Based on this new project, the [Mask R-CNN](https://github.com/PingCheng-Wei/Mask-R-CNN) can be trained and tested (i.e make predictions) in TensorFlow 2.0. The Mask R-CNN model generates bounding boxes and segmentation masks for each instance of an object in the image. It's based on Feature Pyramid Network (FPN) and a ResNet101 backbone.
 
-Compared to the source code of the old [Mask_RCNN](https://github.com/matterport/Mask_RCNN) project, the [Mask-RCNN-TF2](#TODO!!!) project edits the following 2 modules:
+Compared to the source code of the old [Mask_RCNN](https://github.com/matterport/Mask_RCNN) project, the [Mask-RCNN-TF2](https://github.com/PingCheng-Wei/Mask-R-CNN) project edits the following 2 modules:
 
 1. `model.py`
 2. `utils.py`
 3. `visualize.py`
 
-The [Mask-RCNN-TF2](#TODO!!!) project is tested against on the following software & hardware enviroment versions:
+The [Mask-RCNN-TF2](https://github.com/PingCheng-Wei/Mask-R-CNN) project is tested against on the following software & hardware enviroment versions:
 * Ubuntu == 18.04.5 LTS 
 * GPU == GeForce GTX 1080 Ti
 * CUDA == 11.2
@@ -54,7 +54,7 @@ The [Mask-RCNN-TF2](#TODO!!!) project is tested against on the following softwar
       # Install requirements
       pip3 install -r requirements.txt
       ```
-   * Option 2: import directly the enviroment from [SD-MaskRCNN](#TODO). Download the `yml file` from this [links](#TODO) into repository root directory, which is competible with Mask RCNN and run
+   * Option 2: import directly the enviroment from [SD-MaskRCNN](https://github.com/PingCheng-Wei/SD-MaskRCNN). Download the `yml file` from this [links](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/environment.yml) into repository root directory, which is competible with Mask RCNN and run
       ```bash
       conda env create -f <path/to/yaml/file>
       # conda env create -f environment.yml
