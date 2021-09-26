@@ -1,0 +1,26 @@
+model:
+  path: models/
+  weights: mask_rcnn_dexnet_bin_res101_0045.h5      # new, last, coco, imagenet or custom path
+  epochs: 120                   # number of epochs to train for
+  settings:
+    name: Train-set_all_res101      # TODO
+    image_shape: [512, 512]
+    image_channel_count: 3
+    mean_pixel: [128, 128, 128]
+    backbone: resnet101         # TODO
+    max_gt_instances: 102      # TODO
+    gpu_count: 1
+    images_per_gpu: 4          # TODO
+    learning_rate: 0.001       # default 0.01
+
+dataset: # TODO
+  path: /data/SD-MaskRCNN_exp2/Train/
+  train_indices: train_indices.npy
+  val_indices: test_indices.npy
+  images: depth_ims
+  masks: modal_segmasks
+
+# name of the config file to save (within the dataset folder)
+# note that this will be overwritten between multiple runs so
+# you should name this uniquely for each run.
+save_conf_name: config_Train-set_all_res101.yaml
