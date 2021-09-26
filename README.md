@@ -9,7 +9,7 @@ This repository includes:
 * Other useful scripts
 * Documentations and images
 
-This [SD-MaskRCNN](#TODO!!!) project is tested against on the following software & hardware enviroment versions:
+This [SD-MaskRCNN](https://github.com/PingCheng-Wei/SD-MaskRCNN) project is tested against on the following software & hardware enviroment versions:
 
 * Ubuntu == 18.04.5 LTS
 * GPU == GeForce GTX 1080 Ti
@@ -22,26 +22,26 @@ This [SD-MaskRCNN](#TODO!!!) project is tested against on the following software
 
 ## Table of Contents
 
-* [Theory]()
-  * [Mask RCNN]()
-  * [SD-MaskRCNN]()
-* [Installation]()
-* [Implementation]()
-  * [Run Detection]()
-  * [Train a New Model]()
-  * [Generate a New Dataset for training]()
-  * [Generate Semantic Masks]()
-  * [Rename all the image to the format "image_{index}"]()
-* [Results]()
+* [Theory](https://github.com/PingCheng-Wei/SD-MaskRCNN#theory)
+  * [Mask RCNN](https://github.com/PingCheng-Wei/SD-MaskRCNN#mask-rcnn)
+  * [SD-MaskRCNN](https://github.com/PingCheng-Wei/SD-MaskRCNN#sd-maskrcnn)
+* [Installation](https://github.com/PingCheng-Wei/SD-MaskRCNN#installation)
+* [Implementation](https://github.com/PingCheng-Wei/SD-MaskRCNN#implementation)
+  * [Run Detection](https://github.com/PingCheng-Wei/SD-MaskRCNN#run-detection)
+  * [Train a New Model](https://github.com/PingCheng-Wei/SD-MaskRCNN#train-a-new-model)
+  * [Generate a New Dataset for training](https://github.com/PingCheng-Wei/SD-MaskRCNN#generate-a-new-dataset-for-training)
+  * [Generate Semantic Masks](https://github.com/PingCheng-Wei/SD-MaskRCNN#generate-semantic-masks)
+  * [Rename all the image to the format "image_{index}"](https://github.com/PingCheng-Wei/SD-MaskRCNN#rename-all-the-image-to-the-format-image_index)
+* [Results](https://github.com/PingCheng-Wei/SD-MaskRCNN#results)
 
 # Theory
 
 ## Mask RCNN
-In order to grasp the concept of the Mask RCNN, we have create PPT to easily explain the overall architecture and detailed functionality of each parts. Please check out or download the PPT from [this links](#TODO) and go to "Theory of Mask RCNN" part. The experiment 1 results are also shown in the PPT. Feel free to explore yourself.
+In order to grasp the concept of the Mask RCNN, we have create PPT to easily explain the overall architecture and detailed functionality of each parts. Please check out or download the PPT from [this links](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/SD-MaskRCNN_Exp1.pptx) and go to "Theory of Mask RCNN" part. The experiment 1 results are also shown in the PPT. Feel free to explore yourself.
 
 Here is an overall architecture of Mask RCNN:
 
-![Overall architecture of Mask RCNN](#TODO)
+![Overall architecture of Mask RCNN](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/MaskRCNN_structure/Overall%20architecture%20of%20Mask%20RCNN.png)
 
 For more information and understanding, here are some useful links:
 * [Instance Segmentation with Mask R-CNN and TensorFlow with ballon dataset](https://engineering.matterport.com/splash-of-color-instance-segmentation-with-mask-r-cnn-and-tensorflow-7c761e238b46)
@@ -176,8 +176,8 @@ Other contributions from SD-MaskRCNN:
    * [releases page](https://github.com/matterport/Mask_RCNN/releases)
    * COCO pre-trained model (ResNet101): [mask_rcnn_coco.h5](https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5)
    * SD-MaskRCNN benchmark pre-trained model (ResNet35): [sd_maskrcnn.h5](https://berkeley.box.com/shared/static/obj0b2o589gc1odr2jwkx4qjbep11t0o.h5)
-   * Binpicking Dexnet Dataset Model (ResNet101): [sd_maskrcnn_dexnet_res101.h5](#TODO!!!)
-   * Binpicking Final Model (ResNet101): [sd_maskrcnn_final_res101.h5](#TODO!!!)
+   * Binpicking Dexnet Dataset Model (ResNet101): [sd_maskrcnn_dexnet_res101.h5](https://drive.google.com/file/d/1wwdzkhvsKVHyZmIzE8V7eqVRLhQe5T7l/view?usp=sharing)
+   * Binpicking Final Model (ResNet101): [sd_maskrcnn_final_res101.h5](https://drive.google.com/file/d/1F-MfKgxNb-O1H6I3bD-HEQ5ymd_ZJJrd/view?usp=sharing)
 
      ```
      <root directory (e.g. SD-MaskRCNN)>/
@@ -221,7 +221,7 @@ CUDA_VISIBLE_DEVICES=0 python tools/detect.py --config cfg/another.yaml
 the default value for `--config` in `tools/detect.py` is `cfg/binpicking_test.yaml`. Feel free to change the default value to your own configuration file 
 
 ## Train a New Model
-To train a new model, first [generate a new dataset for training](#TODO). Edit `cfg/binpicking_train.yaml` so that the train path points to the dataset to train on (typically, inside this trainset root directory it should contain at least depth images folder and instance segmentation folder) and adjust training parameters such as:
+To train a new model, first [generate a new dataset for training](https://github.com/PingCheng-Wei/SD-MaskRCNN#generate-a-new-dataset-for-training). Edit `cfg/binpicking_train.yaml` so that the train path points to the dataset to train on (typically, inside this trainset root directory it should contain at least depth images folder and instance segmentation folder) and adjust training parameters such as:
 
 * epochs
 * weights, this could be "new", "last", "coco", "imagenet", "other model weights name stored in `models` folder" or custom path) 
@@ -289,7 +289,7 @@ Train/
     test_indices.npy
 ```
 
-Inside the `segmasks_filled` folder is empty. We still need to run the `SemanticMask_generation.py` script to [generate semantic masks](#TODO) and store them into it if they are needed for instance in testing/detection.
+Inside the `segmasks_filled` folder is empty. We still need to run the `SemanticMask_generation.py` script to [generate semantic masks](https://github.com/PingCheng-Wei/SD-MaskRCNN#generate-semantic-masks) and store them into it if they are needed for instance in testing/detection.
 
 For more information, please explore yourself in the script
 
@@ -318,13 +318,12 @@ _For more understanding and explaination about SD-MaskRCNN or implementation of 
 ## Dexnet Vase 
 || RGB Image | Ground Truth | Predict (no filtered) | Predict (filtered) |
 |---|---|---|---|---|
-| Package | ![]() | ![]() | ![]() | ![]() |
-| Without Package | ![]() | ![]() | ![]() | ![]() |
+| Package | ![DexnetVase_package_rgb](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_package_rgb.png) | ![DexnetVase_package_gt](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_package_gt.png) | ![DexnetVase_package_pred1](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_package_pred1.png) | ![DexnetVase_package_pred2](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_package_pred2.png) |
+| Without Package | ![DexnetVase_nopackage_rgb](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_nopackage_rgb.png) | ![DexnetVase_nopackage_gt](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_nopackage_gt.png) | ![DexnetVase_nopackage_pred1](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_nopackage_pred1.png) | ![DexnetVase_nopackage_pred2](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetVase_nopackage_pred2.png) |
 
-## Dexnet U2 
+## Dexnet U2
 || RGB Image | Ground Truth | Predict (no filtered) | Predict (filtered) |
 |---|---|---|---|---|
-| Package | ![]() | ![]() | ![]() | ![]() |
-| Without Package | ![]() | ![]() | ![]() | ![]() |
-
+| Package | ![DexnetU2_package_rgb](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_package_rgb.png) | ![DexnetU2_package_gt](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_package_gt.png) | ![DexnetU2_package_pred1](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_package_pred1.png) | ![DexnetU2_package_pred2](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_package_pred2.png) |
+| Without Package | ![DexnetU2_nopackage_rgb](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_nopackage_rgb.png) | ![DexnetU2_nopackage_gt](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_nopackage_gt.png) | ![DexnetU2_nopackage_pred1](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_nopackage_pred1.png) | ![DexnetU2_nopackage_pred2](https://github.com/PingCheng-Wei/SD-MaskRCNN/blob/main/assets/Results/DexnetU2_nopackage_pred2.png) |
 
