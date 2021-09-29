@@ -130,10 +130,13 @@ Other contributions from SD-MaskRCNN:
 
     import directly the enviroment from the `environment.yml` file. run:
 
+     `Please also change the "prefix" in environment.yml to your own <path/to/anaconda3/envs/sd-maskrcnn>. Currently, it is "prefix: /home/muk-pw/anaconda3/envs/sd-maskrcnn, which is my system path. Please change it to yours.`
+
     ```bash
     conda env create -f <path/to/environment.yml/file>
     # for example: conda env create -f environment.yml
     ```
+   
 
     This will automatically create an enviroment named "SD-MaskRCNN", which includes all the libraries that SD-MaskRCNN needs
 
